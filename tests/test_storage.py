@@ -22,7 +22,6 @@ def test_data_insertion_and_retrieval():
 def test_callbacks_get_called_when_data_is_put():
     st = Storage()
 
-    # Callbacks
     calls_cb1 = []
     calls_cb2 = []
 
