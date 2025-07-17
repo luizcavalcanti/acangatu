@@ -4,10 +4,11 @@ import json
 class Storage:
     def __init__(self):
         self.database = {}
+        self.callbacks = []
 
-    def insert(self, key, data):
+    def put(self, key, data):
         self.database[key] = data
-        self._notify("insert", key, data)
+        self._notify("put", key, data)
 
     def get(self, key):
         return self.database.get(key, None)
@@ -23,5 +24,9 @@ class Storage:
         with open(file, "w") as f:
             json.dump(self.database, f)
 
+    def add_callback(self, callback_function):
+        self.callbacks.append(callback_function)
+
     def _notify(self, operation, key, data):
-        print(f"enqueue >> {operation} on {key} ({data})")
+        for cb in self.callbacks:
+            cb(operation, key, data)

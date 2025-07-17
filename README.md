@@ -16,8 +16,8 @@ st = Storage()
 # load from json
 st.load("my_storage_file.json")
 
-# insert data
-st.insert("my-key", {"my-data": [1, 2, 3]})
+# insert/update data
+st.put("my-key", {"my-data": [1, 2, 3]})
 
 # retrieve data
 st.get("my-key")
