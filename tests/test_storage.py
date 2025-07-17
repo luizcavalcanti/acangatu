@@ -19,6 +19,23 @@ def test_data_insertion_and_retrieval():
     assert "test" == st.get("key-2")
 
 
+def test_data_deletion():
+    st = Storage()
+
+    st.put("key-1", 3)
+    st.put("key-2", "test")
+
+    assert 2 == st.count()
+    assert 3 == st.get("key-1")
+    assert "test" == st.get("key-2")
+
+    st.delete("key-2")
+
+    assert 1 == st.count()
+    assert 3 == st.get("key-1")
+    assert not st.get("key-2")
+
+
 def test_callbacks_get_called_when_data_is_put():
     st = Storage()
 

@@ -14,6 +14,9 @@ class Storage:
     def get(self, key: any) -> any:
         return self.database.get(key, None)
 
+    def delete(self, key: any) -> None:
+        self.database.pop(key, None)
+
     def count(self) -> int:
         return len(self.database)
 

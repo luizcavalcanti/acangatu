@@ -22,10 +22,12 @@ def my_callback(operation, key, data):
 
 st.add_callback(my_callback)
 
-# insert/update data
+# insert/update entry
 st.put("my-key", {"my-data": [1, 2, 3]})
-# retrieve data
+# retrieve entry
 st.get("my-key")
+# delete entry
+st.delete("my-key")
 # count records
 st.count()
 
