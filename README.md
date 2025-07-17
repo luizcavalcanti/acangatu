@@ -1,8 +1,8 @@
 # Acangatu
 
-A Python in-memory key-value database proof of concept package
+A Python in-memory key-value proof of concept database
 
-Acangatu (or Akangatu) means "Memory" in Tupi-Guarani, a South American indigenous language.
+Acangatu (or Akangatu) means "memory" in [Tupi-Guarani](https://en.wikipedia.org/wiki/Tupi%E2%80%93Guarani_languages).
 
 ---
 
