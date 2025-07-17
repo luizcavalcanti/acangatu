@@ -16,12 +16,16 @@ st = Storage()
 # load from json
 st.load("my_storage_file.json")
 
+# Add callbacks to get notified when data changes
+def my_callback(operation, key, data):
+  do_something_with(data)
+
+st.add_callback(my_callback)
+
 # insert/update data
 st.put("my-key", {"my-data": [1, 2, 3]})
-
 # retrieve data
 st.get("my-key")
-
 # count records
 st.count()
 
