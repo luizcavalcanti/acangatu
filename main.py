@@ -1,9 +1,9 @@
 import uuid
-from storage import Storage
+from acangatu import Storage
 
 storage = Storage()
 
-storage.recover("storage.json")
+storage.load("storage.json")
 
 #for i in range(5000):
 #    storage.insert(

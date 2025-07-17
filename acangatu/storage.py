@@ -15,7 +15,7 @@ class Storage:
     def count(self):
         return len(self.database)
 
-    def recover(self, file):
+    def load(self, file):
         with open(file) as f:
             self.database = json.load(f)
 
